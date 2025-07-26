@@ -5,4 +5,4 @@ async function test(){
   
   tittle.innerText=parsedResponse.name  
 }
-test()
+//test()
