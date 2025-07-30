@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   </head>
   <body>
     <header class="bg-primary">
-      <h1>Hello World</h1>
+      <h1>Welcome to my studio!</h1>
       <nav>
-        <!-- Enlaces de navegación (opcional) -->
+          <button id="navMyProyects" class="nav-button">My proyects</button>
+          <button id="navMyProyects" class="nav-button">My blog</button>
+          <button id="navMyProyects" class="nav-button">Week function</button>
       </nav>
     </header>
 
     <main>
-      <section id="aboutMe">
+      <section class="section0">
         <h2>About Me</h2>
         <p>
-          I'm a recent graduate in Computer Engineering from the Universitat de les Illes Balears,
+          Hi! I'm Miquel, a recent graduate in Computer Engineering from the Universitat de les Illes Balears,
           with a strong focus on full-stack development.
         </p>
         <p>
@@ -35,31 +38,33 @@
         </p>
       </section>
 
-      <section id="myExperience">
-        <h2>Experience</h2>
-        <!-- Contenido futuro -->
+      <section class="section1">
+
       </section>
 
-      <section id="myProyects">
-        <h2>Projects</h2>
+      <section class="section0">
+        <h2>My studies & other certifications</h2>
         <!-- Contenido futuro -->
       </section>
+      
     </main>
-
-    <script src="testAPI.js"></script>
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/static/JS/collapseData.js"></script>
+    <script src="/static/JS/testAPI.js"></script>
   </body>
   <footer>
   <div class="footer-content">
     <p>Connect with me:</p>
     <ul>
       <li>
-        <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer">
-          LinkedIn
+        <a target="_blank" rel="noopener noreferrer">
+          LinkedIn <i class="bi bi-linkedin"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.youtube.com/channel/tu-canal" target="_blank" rel="noopener noreferrer">
-          YouTube
+        <a target="_blank" rel="noopener noreferrer">
+          YouTube <i class="bi bi-youtube"></i>
         </a>
       </li>
     </ul>

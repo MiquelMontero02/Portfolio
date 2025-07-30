@@ -1,0 +1,38 @@
+{
+    "name":"Miquel Angel Montero Pazmiño",
+    "linkedin":"https://www.linkedin.com/in/miquel-ángel-montero-pazmiño-5ab5412b4",
+    "youtube":"https://www.youtube.com/channel/tu-canal",
+    "experience":[
+        {
+            "company":"TIRME",
+            "duration":"3 months (Practice)",
+            "techStack":[
+                {
+                    "technology":"Google Cloud Platform (GCP)",
+                    "documentation":"https://cloud.google.com"
+                },
+                {
+                    "technology":"Apache Airflow",
+                    "documentation":"https://airflow.apache.org/docs"
+                },
+                {
+                    "technology":"Docker",
+                    "documentation":"https://docs.docker.com"
+                },
+                {
+                    "technology":"Python"
+                }
+            ],
+            "mainTasks":[
+                "- Develop simple apps using GCP tools like AppSheet & AppScript",
+                "- Process & analyze data with BigQuery Console & create reports with Looker Studio",
+                "- Capture data from differents sources (FTP Server, Scrapping web page) with Python using libraries like resquests"
+            ],
+            "knowledgeAdquire":[
+                "- Increase my knowledge about Networks and protocols like HTTP,SSH & WebSockets ",
+                "- Improved collaboration skills with technics and non-technics teammates",
+                "- Introduction to Web Scrapping"
+            ]
+        }
+    ]
+}
