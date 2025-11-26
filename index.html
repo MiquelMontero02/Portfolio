@@ -13,12 +13,42 @@
       <h1>Welcome to my studio!</h1>
       <nav>
           <button id="navMyProyects" class="nav-button">My proyects</button>
+          <a href="/static/pages/blog.html">
+            
+          </a>
           <button id="navMyBlog" class="nav-button">My blog</button>
           <button id="navWeekFunction" class="nav-button">Week function</button>
       </nav>
     </header>
 
     <main>
+      <section class="section0">
+        <h2>What is coming to this page</h2>
+        <div>
+          <ol>
+            <li>Improve CSS with Tailwind
+              <ul>
+                <li>Responsive design</li>
+                <li>Dark mode</li>
+              </ul>
+            </li>
+            <li>Blog section
+              <ul>
+                <li>Articles about programming</li>
+                
+                <li>Articles about technology</li>
+                <li>Articles about my learning journey</li>
+              </ul>
+            </li>
+            <li>Projects section
+              <ul>
+                <li>Personal projects</li>
+                <li>Collaborative projects</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
       <section class="section0">
         <h2>About Me</h2>
         <p>
@@ -40,10 +70,6 @@
       </section>
 
       <section class="section1">
-
-      </section>
-
-      <section class="section0">
         <h2>My studies & other certifications</h2>
         <!-- Contenido futuro -->
       </section>
@@ -52,21 +78,30 @@
     <!--SCRIPTS-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="/static/JS/collapseData.js"></script>
-    <script src="/static/JS/testAPI.js"></script>
-    <script src="/static/JS/animations/demoGSAP.js"></script>
+    <script src="./static/JS/animations/collapseData.js"></script>
+    <script src="./static/JS/animations/demoGSAP.js"></script>
+    
+    <script src="./static/JS/experienceCard/generateExperienceContainers.js"></script>
+    <script src="./static/JS/experienceCard/configExpCardFieldList.js"></script>
+    
+    <script src="./static/JS/fetchOperations/fetchFile.js"></script>
+    <script src="./static/JS/fetchOperations/fetchJSON.js"></script>
+
+    <script src="./static/JS/footer/setLinks.js"></script>
+
+    <script src="./static/JS/main.js"></script>
   </body>
   <footer>
   <div class="footer-content">
     <p>Connect with me: </p>
     <ul>
       <li>
-        <a target="_blank" rel="noopener noreferrer">
+        <a id="linkedin" target="_blank" rel="noopener noreferrer">
           LinkedIn <i class="bi bi-linkedin"></i>
         </a>
       </li>
       <li>
-        <a target="_blank" rel="noopener noreferrer">
+        <a id="youtube" target="_blank" rel="noopener noreferrer">
           YouTube <i class="bi bi-youtube"></i>
         </a>
       </li>
