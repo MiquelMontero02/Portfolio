@@ -1,7 +1,19 @@
 {
     "name":"Miquel Angel Montero Pazmiño",
-    "linkedin":"https://www.linkedin.com/in/miquel-ángel-montero-pazmiño-5ab5412b4",
-    "youtube":"https://www.youtube.com/channel/tu-canal",
+    "links":[
+        {
+            "app":"linkedin",
+            "url":"https://www.linkedin.com/in/miquel-ángel-montero-pazmiño-5ab5412b4"
+        },
+        {
+            "app":"youtube",
+            "url":"https://www.youtube.com/channel/tu-canal"
+        },
+        {
+            "app":"github",
+            "url":"https://github.com/miquelmontero02"
+        }
+        ],
     "experience":[
         {
             "company":"TIRME",
