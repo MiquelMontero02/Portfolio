@@ -21,12 +21,18 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
+        working-directory: my-vue-app
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build
+        run: npm run build
+        working-directory: my-vue-app
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: my-vue-app/dist
 
   deploy:
     needs: build
