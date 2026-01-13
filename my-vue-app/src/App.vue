@@ -4,7 +4,7 @@ import HomeView from './views/HomeView.vue'
 
 <style scoped>
 main {
-  padding: 2rem;
+  padding: 1rem;
 }
 </style>
 
