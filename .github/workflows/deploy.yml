@@ -22,16 +22,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          # Indicamos dónde está el archivo de bloqueo para el caché
+          node-version: 24  # Actualizado a Node 24
           cache: 'npm'
           cache-dependency-path: my-vue-app/package-lock.json
 
       - name: Install dependencies
-        # Indicamos que ejecute el comando dentro de la subcarpeta
         run: npm ci
         working-directory: my-vue-app
 
@@ -42,7 +40,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANTE: La ruta al artefacto también cambia
           path: my-vue-app/dist
 
   deploy:
