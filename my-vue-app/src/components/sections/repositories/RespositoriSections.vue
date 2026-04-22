@@ -1,6 +1,6 @@
 <script setup>
     import { ref, watch } from 'vue';
-    import { githubService } from '../../../api/githubService';
+    import { githubService } from '@/api/githubService';
     import RepositoriCard from './RepositoriCard.vue';
 
     const props = defineProps({
