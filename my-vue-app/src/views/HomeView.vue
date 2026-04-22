@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import RespositoriSections from '../components/sections/repositories/respositoriSections.vue';
+import RespositoriSections from '@/components/sections/repositories/respositoriSections.vue';
 
 </script>
 
