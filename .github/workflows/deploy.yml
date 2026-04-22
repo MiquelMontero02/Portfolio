@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  # Permite ejecutar esta acción manualmente desde la pestaña Actions
   workflow_dispatch:
 
 permissions:
@@ -12,7 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Evita que múltiples despliegues pisen el anterior si haces push seguidos
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -27,20 +25,25 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Actualizado a la versión LTS más reciente
-          cache: 'npm'     # Activa el caché automático de dependencias
+          node-version: 20
+          # Indicamos dónde está el archivo de bloqueo para el caché
+          cache: 'npm'
+          cache-dependency-path: my-vue-app/package-lock.json
 
       - name: Install dependencies
+        # Indicamos que ejecute el comando dentro de la subcarpeta
         run: npm ci
+        working-directory: my-vue-app
 
       - name: Build
         run: npm run build
+        working-directory: my-vue-app
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Asegúrate de que tu carpeta de salida en Vite sea 'dist'
-          path: dist
+          # IMPORTANTE: La ruta al artefacto también cambia
+          path: my-vue-app/dist
 
   deploy:
     needs: build
