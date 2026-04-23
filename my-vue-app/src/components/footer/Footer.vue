@@ -14,10 +14,10 @@
 <style scoped>
 footer {
     display: flex;
-    width: 90dvw;
-    position: sticky;
+    width: auto;
+    position:relative;
     bottom: 0;
-    margin-top: 0.5rem;
+
     background-color: aquamarine;
 }
 p{
