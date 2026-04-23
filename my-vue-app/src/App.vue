@@ -14,8 +14,8 @@ main {
   <main>
     <NavBar />
     <HomeView />
-    <Footer footerText="Built with Vue 3 and TypeScript" />
   </main>
+  <Footer footerText="Built with Vue 3 and TypeScript" />
 </template>
 
 
