@@ -64,24 +64,60 @@
     padding: 2rem 0;
     left: 0;
     box-sizing: border-box;
+    width: 100%;
 }
 
-.loading,
-.error {
+.loading {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
     text-align: center;
     padding: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    animation: blink 1s steps(2, start) infinite;
 }
 
 .error {
-    color: #d73a49;
-    background-color: #ffeef0;
-    border: 1px solid #d73a49;
-    border-radius: 6px;
+    color: #ff3131;
+    text-shadow: 0 0 5px #ff3131;
+    background: rgba(255, 49, 49, 0.1);
+    border: 2px solid #ff3131;
+    border-radius: 2px;
+    padding: 1rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    animation: flicker 0.15s infinite;
 }
 
 .repos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
+    position: relative;
+}
+
+.repos-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes flicker {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
 }
 </style>
