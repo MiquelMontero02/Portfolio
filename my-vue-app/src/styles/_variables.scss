@@ -1,24 +1,37 @@
-$primary-color: #646cff;
-$secondary-color: #535bf2;
-$background-dark: #242424;
-$background-light: #ffffff;
-$text-dark: #213547;
-$text-light: rgba(255, 255, 255, 0.87);
-$error-color: #d73a49;
-$border-color: #e1e4e8;
-$card-bg: #fff;
-$link-color: #646cff;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
-$font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-$line-height: 1.8;
+$neon-pink: #ff00ff;
+$neon-cyan: #00ffff;
+$neon-yellow: #ffff00;
+$neon-green: #39ff14;
+$neon-red: #ff3131;
+$neon-orange: #ff9500;
+
+$bg-dark: #0a0a0f;
+$bg-panel: #12121a;
+$bg-card: #1a1a2e;
+$bg-overlay: rgba(0, 0, 0, 0.85);
+
+$text-primary: #e0e0e0;
+$text-muted: #888;
+
+$border-glow: $neon-cyan;
+$border-highlight: $neon-pink;
+
+$font-pixel: 'Press Start 2P', cursive;
+$font-terminal: 'VT323', monospace;
 
 $spacing-xs: 0.25rem;
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
-$spacing-lg: 2rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
 
-$border-radius: 6px;
-$border-radius-lg: 8px;
+$border-radius: 2px;
+$border-radius-sm: 4px;
 
-$transition-fast: 0.25s;
+$transition-fast: 0.15s;
 $transition-normal: 0.3s;
+
+$scanline-color: rgba(0, 0, 0, 0.5);
+$glow-intensity: 0.8;

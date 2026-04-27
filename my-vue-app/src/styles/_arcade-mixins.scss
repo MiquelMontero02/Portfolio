@@ -1,0 +1,137 @@
+@use 'variables' as *;
+
+@mixin neon-glow($color: $neon-cyan, $intensity: $glow-intensity) {
+  box-shadow: 
+    0 0 5px rgba($color, $intensity),
+    0 0 10px rgba($color, $intensity * 0.8),
+    0 0 20px rgba($color, $intensity * 0.6),
+    0 0 40px rgba($color, $intensity * 0.4);
+}
+
+@mixin text-glow($color: $neon-cyan) {
+  text-shadow: 
+    0 0 5px $color,
+    0 0 10px $color,
+    0 0 20px $color;
+}
+
+@mixin scanline-bg {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      $scanline-color 2px,
+      $scanline-color 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+}
+
+@mixin arcade-grid {
+  background-image: 
+    linear-gradient(rgba($neon-cyan, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($neon-cyan, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@mixin blink($color: $neon-pink) {
+  animation: blink-animation 1s steps(2, start) infinite;
+  
+  @keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+}
+
+@mixin flicker {
+  animation: flicker-animation 0.15s infinite;
+  
+  @keyframes flicker-animation {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+  }
+}
+
+@mixin arcade-hover($color: $neon-cyan) {
+  transition: all $transition-fast;
+  cursor: pointer;
+  
+  &:hover {
+    @include neon-glow($color);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin arcade-button($color: $neon-cyan) {
+  @include neon-glow($color, 0.5);
+  background: transparent;
+  border: 2px solid $color;
+  color: $color;
+  font-family: $font-pixel;
+  font-size: 0.7rem;
+  padding: $spacing-sm $spacing-md;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba($color, 0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:hover {
+    @include neon-glow($color);
+    transform: scale(1.02);
+  }
+}
+
+@mixin terminal-text {
+  font-family: $font-terminal;
+  font-size: 1.2rem;
+  color: $neon-green;
+  letter-spacing: 2px;
+}
+
+@mixin pixel-border($color: $neon-cyan) {
+  border: 2px solid $color;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: $color;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+}
