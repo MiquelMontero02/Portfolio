@@ -1,7 +1,7 @@
 <script setup>
     import { ref, watch } from 'vue';
-    import { githubService } from '@/api/githubService';
-    import RepositoriCard from './RepositoriCard.vue';
+    import { githubService } from '@/services/githubService';
+    import RepositoryCard from './RepositoryCard.vue';
 
     const props = defineProps({
         username: {
@@ -42,7 +42,7 @@
         <div v-if="loading" class="loading">Cargando repositorios...</div>
         <div v-else-if="error" class="error">{{ error }}</div>
         <div v-else class="repos-grid">
-            <RepositoriCard 
+            <RepositoryCard 
                 v-for="repo in repos" 
                 :key="repo.id"
                 :repo="{

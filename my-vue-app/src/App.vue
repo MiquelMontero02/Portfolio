@@ -1,7 +1,6 @@
 <script setup>
 import Footer from './components/footer/Footer.vue';
 import NavBar from './components/navbar/NavBar.vue';
-import HomeView from './views/HomeView.vue'
 </script>
 
 <style scoped>
@@ -13,7 +12,7 @@ main {
 <template>
   <main>
     <NavBar />
-    <HomeView />
+    <router-view />
   </main>
   <Footer footerText="Built with Vue 3 and TypeScript" />
 </template>

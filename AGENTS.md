@@ -13,7 +13,41 @@ Estilos: Cada componente tendrá su propio archivo de estilos (CSS/SCSS Modules)
 
 Lógica: El comportamiento específico de la UI reside aquí.
 
-2. Capa de Lógica: Filosofía de Services
+2. Estructura de Carpetas (Folder Structure)
+La estructura de carpetas debe seguir el siguiente patrón:
+
+```
+src/
+├── assets/
+│   └── images/           # Imágenes estáticas
+├── components/          # Componentes Vue
+│   ├── common/         # Componentes reutilizables (Button, Input, Modal, etc.)
+│   ├── footer/        # Componentes de pie de página
+│   ├── layout/        # Componentes de layout (Header, Sidebar, etc.)
+│   └── navbar/        # Componentes de navegación
+│       └── sections/  # Secciones específicas de vistas
+│           └── [feature]/
+├── composables/         # Lógica reutilizable (Vue 3 Composition API)
+├── constants/         # Constantes de la aplicación
+├── router/            # Configuración de rutas
+├── services/          # Lógica de negocio y llamadas HTTP
+├── styles/            # Estilos globales y variables SCSS
+│   ├── _variables.scss
+│   └── main.scss
+├── types/             # Tipos TypeScript
+├── utils/             # Funciones helper
+└── views/            # Vistas asociadas a rutas
+```
+
+Reglas:
+- No usar .js para lógica de negocio, usar .ts
+- Nombrar archivos en PascalCase (RepositoryCard.vue)
+- Componentes en carpetas por contexto (footer/, navbar/, sections/)
+- Services en carpeta services/ (no api/)
+- Tipos en carpeta types/
+- Estilos globales en styles/
+
+3. Capa de Lógica: Filosofía de Servicios
 Para garantizar la legibilidad y compatibilidad, se prohíbe el uso de lógica pesada o llamadas directas a red dentro de los componentes:
 
 Separación de Preocupaciones: Toda manipulación de datos, cálculos complejos o peticiones HTTP debe residir en archivos services/.

@@ -5,7 +5,6 @@ const githubClient = axios.create({
   timeout: 5000,
   headers: {
     'Accept': 'application/vnd.github.v3+json'
-    // ADD TOKEN HERE
   }
 });
 
