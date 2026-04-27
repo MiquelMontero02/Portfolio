@@ -1,0 +1,36 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "position": "Docente CFGS - DAM y DAW",
+      "company": "Sant Josep Obrer",
+      "startDate": "September 2025",
+      "endDate": "Present",
+      "description": "Docencia en ciclos formativos de Desarrollo de Aplicaciones Multiplataforma y Desarrollo de Aplicaciones Web"
+    },
+    {
+      "id": 2,
+      "position": "Técnico Especialista en Proyecto ESDATIB",
+      "company": "FUEIB",
+      "startDate": "February 2026",
+      "endDate": "Present",
+      "description": "Técnico especialista en proyecto tecnológico"
+    },
+    {
+      "id": 3,
+      "position": "LiveOps Producer",
+      "company": "Space Go",
+      "startDate": "April 2025",
+      "endDate": "Septembre 2025",
+      "description": "Producción y operaciones en directo"
+    },
+    {
+      "id": 4,
+      "position": "Data Engineering (Internship)",
+      "company": "TIRME",
+      "startDate": "July 2024",
+      "endDate": "October 2024",
+      "description": "Practicante en ingeniería de datos"
+    }
+  ]
+}

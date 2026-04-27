@@ -1,0 +1,20 @@
+{
+  "techSkills": [
+    { "name": "JavaScript", "level": "Expert" },
+    { "name": "Vue.js", "level": "Advanced" },
+    { "name": "Node.js", "level": "Intermediate" },
+    { "name": "Python", "level": "Intermediate" },
+    { "name": "PostgreSQL", "level": "Intermediate" },
+    { "name": "Docker", "level": "Advanced" },
+    { "name": "Git", "level": "Advanced" },
+    { "name": "GitHub Actions", "level": "Intermediate" },
+    { "name": "HTML/CSS", "level": "Expert" }
+  ],
+  "softSkills": [
+    { "name": "Trabajo en equipo" },
+    { "name": "Comunicación" },
+    { "name": "Resolución de problemas" },
+    { "name": "Adaptabilidad" },
+    { "name": "Gestión del tiempo" }
+  ]
+}
