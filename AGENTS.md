@@ -92,3 +92,41 @@ Ejemplo de estructura:
   <Content v-else :data="data" />
 </template>
 ```
+
+5. Estilo Visual: Cyberpunk Arcade
+Todo el proyecto debe seguir un estilo visual Cyberpunk Arcade para mantener coherencia:
+
+Paleta de Colores:
+- Neón Cyan (#00ffff) - Color principal
+- Neón Pink (#ff00ff) - Color de acento
+- Neón Yellow (#ffff00) - Para valores/estadísticas
+- Neón Green (#39ff14) - Para texto terminal
+- Fondo Oscuro (#0a0a0f) - Background principal
+- Panel (#1a1a2e) - Para cards/contenedores
+
+Efectos Obligatorios:
+- Scanlines: Efecto de líneas CRT superpuestas (repeating-linear-gradient)
+- Border Glow: Bordes con box-shadow neón en hovers
+- Text Glow: text-shadow en títulos y enlaces
+- Flicker/Blink: Animaciones de parpadeo en elementos clave
+
+Fuentes:
+- Títulos: 'Press Start 2P' (Google Fonts) - Estilo pixel
+- Cuerpo: 'VT323' (Google Fonts) - Estilo terminal
+
+Mixins Disponibles (en styles/_arcade-mixins.scss):
+- @mixin neon-glow($color) - Efecto glow en bordes
+- @mixin text-glow($color) - Efecto glow en texto
+- @mixin scanline-bg - Fondo con efecto scanlines
+- @mixin arcade-grid - Grid de fondo retro
+- @mixin blink - Animación de parpadeo
+- @mixin flicker - Animación de parpadeo rápido
+- @mixin arcade-hover - Hover con glow y transform
+- @mixin arcade-button - Botón estilo arcade
+- @mixin terminal-text - Texto estilo terminal
+- @mixin pixel-border - Borde con efecto glow
+
+Implementación en Componentes:
+- Todos los componentes deben usar variables de styles/_variables.scss
+- Usar los mixins de styles/_arcade-mixins.scss para efectos coherentes
+- Mantener consistencia con la paleta de colores definida

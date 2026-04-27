@@ -1,86 +1,186 @@
 @use 'variables' as *;
+@use 'arcade-mixins' as *;
 
-:root {
-  font-family: $font-family;
-  line-height: $line-height;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: $text-light;
-  background-color: $background-dark;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  font-weight: 500;
-  color: $link-color;
-  text-decoration: inherit;
-  
-  &:hover {
-    color: $secondary-color;
-  }
+html, body {
+  min-height: 100vh;
+  background-color: $bg-dark;
+  color: $text-primary;
+  font-family: $font-terminal;
+  font-size: 18px;
+  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  @include arcade-grid;
+  position: relative;
+}
+
+#app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-pixel;
+  text-transform: uppercase;
+  color: $neon-cyan;
+  @include text-glow($neon-cyan);
+  letter-spacing: 2px;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 1.5rem;
+  margin-bottom: $spacing-lg;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  color: $text-primary;
+}
+
+a {
+  color: $neon-pink;
+  text-decoration: none;
+  transition: all $transition-fast;
+  @include text-glow($neon-pink);
+  
+  &:hover {
+    color: $neon-cyan;
+    @include text-glow($neon-cyan);
+  }
 }
 
 button {
-  border-radius: $border-radius-lg;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color $transition-fast;
-
-  &:hover {
-    border-color: $primary-color;
+  @include arcade-button($neon-cyan);
+  
+  &:focus {
+    outline: none;
+    @include neon-glow($neon-yellow);
   }
-
-  &:focus,
+  
   &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: 2px solid $neon-yellow;
+    outline-offset: 4px;
+  }
+}
+
+input, textarea {
+  background: $bg-panel;
+  border: 2px solid $neon-cyan;
+  color: $neon-green;
+  font-family: $font-terminal;
+  font-size: 1.2rem;
+  padding: $spacing-sm $spacing-md;
+  @include neon-glow($neon-cyan, 0.3);
+  
+  &:focus {
+    outline: none;
+    @include neon-glow($neon-pink);
+  }
+  
+  &::placeholder {
+    color: rgba($neon-green, 0.5);
   }
 }
 
 .card {
+  @include pixel-border($neon-cyan);
+  @include arcade-hover($neon-cyan);
+  background: $bg-card;
   padding: $spacing-lg;
 }
 
-#app {
-  margin: 0 auto;
-  text-align: center;
-  height: 100dvh;
-  width: auto;
+.error {
+  color: $neon-red;
+  @include text-glow($neon-red);
+  @include flicker;
+  border: 2px solid $neon-red;
+  background: rgba($neon-red, 0.1);
+  padding: $spacing-md;
+  border-radius: $border-radius-sm;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: $text-dark;
-    background-color: $background-light;
-  }
+.loading {
+  @include blink($neon-cyan);
+  font-family: $font-pixel;
+  font-size: 0.6rem;
+  text-align: center;
+  padding: $spacing-xl;
+  color: $neon-cyan;
+  @include text-glow($neon-cyan);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $neon-cyan;
+  border-radius: $border-radius;
   
-  a:hover {
-    color: $primary-color;
+  &:hover {
+    background: $neon-pink;
   }
-  
-  button {
-    background-color: #f9f9f9;
+}
+
+::selection {
+  background: $neon-pink;
+  color: $bg-dark;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px $neon-cyan, 0 0 10px $neon-cyan;
+  }
+  50% {
+    box-shadow: 0 0 10px $neon-cyan, 0 0 20px $neon-cyan, 0 0 30px $neon-cyan;
+  }
+}
+
+@keyframes scanline-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
   }
 }
