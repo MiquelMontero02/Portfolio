@@ -1,10 +1,22 @@
 <script setup lang="ts">
 import NavBarBtn from './NavBarBtn.vue';
+
+const navItems = [
+  { text: 'Home', to: '/' },
+  { text: 'CV', to: '/cv' },
+  { text: 'Projects', to: '/projects' },
+  { text: 'Contact', to: '/' }
+];
 </script>
 
 <template>
     <nav class="navbar">
-        <NavBarBtn v-for="n in 4" :key="n" />
+        <NavBarBtn 
+          v-for="item in navItems" 
+          :key="item.to" 
+          :text="item.text" 
+          :to="item.to" 
+        />
     </nav>
 </template>
 

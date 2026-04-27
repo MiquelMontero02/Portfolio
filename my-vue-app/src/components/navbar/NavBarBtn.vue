@@ -1,7 +1,14 @@
+<script setup lang="ts">
+defineProps<{
+  text: string;
+  to: string;
+}>();
+</script>
+
 <template>
-    <div class="nav-btn">
-        <a class="nav-link">Textos</a>
-    </div>
+  <router-link :to="to" class="nav-btn">
+    <span class="nav-link">{{ text }}</span>
+  </router-link>
 </template>
 
 <style scoped>
@@ -12,6 +19,8 @@
     cursor: pointer;
     position: relative;
     transition: all 0.15s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav-btn::before {
@@ -40,6 +49,7 @@
     text-decoration: none;
     text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
     transition: all 0.15s;
+    display: block;
 }
 
 .nav-btn:hover {
@@ -49,6 +59,15 @@
 }
 
 .nav-btn:hover .nav-link {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
+
+.nav-btn.router-link-active {
+    border-color: #ff00ff;
+}
+
+.nav-btn.router-link-active .nav-link {
     color: #ff00ff;
     text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
 }
