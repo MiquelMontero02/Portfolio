@@ -5,7 +5,7 @@ const navItems = [
   { text: 'Home', to: '/' },
   { text: 'CV', to: '/cv' },
   { text: 'Projects', to: '/projects' },
-  { text: 'Contact', to: '/' }
+  { text: 'Contact', to: '/contact' }
 ];
 </script>
 
