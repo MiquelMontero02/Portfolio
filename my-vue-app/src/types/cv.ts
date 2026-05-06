@@ -15,6 +15,14 @@ export interface SocialLinks {
     username: string;
     url: string;
   };
+  phone?: {
+    number: string;
+    url: string;
+  };
+  email: {
+    address: string;
+    url: string;
+  };
 }
 
 export interface Experience {
