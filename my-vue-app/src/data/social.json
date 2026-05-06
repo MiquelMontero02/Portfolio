@@ -6,5 +6,13 @@
   "linkedin": {
     "username": "miquelmontero",
     "url": "https://linkedin.com/in/miquel-ángel-montero-pazmiño-5ab5412b4"
+  },
+  "phone": {
+    "number": "+34 640 842 020",
+    "url": "tel:+34640842020"
+  },
+  "email": {
+    "address": "miquelangelmontero@gmail.com",
+    "url": "mailto:miquelangelmontero@gmail.com"
   }
 }

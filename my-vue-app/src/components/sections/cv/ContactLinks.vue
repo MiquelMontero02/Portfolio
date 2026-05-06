@@ -8,6 +8,16 @@ defineProps<{
 
 <template>
   <section class="contact-links">
+    <a v-if="data.phone" :href="data.phone.url" target="_blank" rel="noopener noreferrer" class="social-link phone">
+      <span class="icon">☎</span>
+      <span class="label">Teléfono</span>
+      <span class="username">{{ data.phone.number }}</span>
+    </a>
+    <a :href="data.email.url" target="_blank" rel="noopener noreferrer" class="social-link email">
+      <span class="icon">@</span>
+      <span class="label">Email</span>
+      <span class="username">{{ data.email.address }}</span>
+    </a>
     <a :href="data.github.url" target="_blank" rel="noopener noreferrer" class="social-link github">
       <span class="icon">⟨⟩</span>
       <span class="label">GitHub</span>
@@ -51,6 +61,14 @@ defineProps<{
   border-color: #0077b5;
 }
 
+.social-link.phone {
+  border-color: #ffff00;
+}
+
+.social-link.email {
+  border-color: #ff00ff;
+}
+
 .social-link::before {
   content: '';
   position: absolute;
@@ -72,6 +90,14 @@ defineProps<{
   background: #0077b5;
 }
 
+.social-link.phone::before {
+  background: #ffff00;
+}
+
+.social-link.email::before {
+  background: #ff00ff;
+}
+
 .social-link:hover::before {
   opacity: 0.4;
 }
@@ -86,6 +112,14 @@ defineProps<{
 
 .social-link.linkedin:hover {
   box-shadow: 0 0 15px #0077b5, 0 0 30px #0077b5;
+}
+
+.social-link.phone:hover {
+  box-shadow: 0 0 15px #ffff00, 0 0 30px #ffff00;
+}
+
+.social-link.email:hover {
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
 }
 
 .icon {
@@ -103,6 +137,16 @@ defineProps<{
   text-shadow: 0 0 10px #0077b5;
 }
 
+.social-link.phone .icon {
+  color: #ffff00;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+.social-link.email .icon {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
 .label {
   font-family: 'Press Start 2P', cursive;
   font-size: 0.5rem;
@@ -115,6 +159,14 @@ defineProps<{
 
 .social-link.linkedin .label {
   color: #0077b5;
+}
+
+.social-link.phone .label {
+  color: #ffff00;
+}
+
+.social-link.email .label {
+  color: #ff00ff;
 }
 
 .username {
